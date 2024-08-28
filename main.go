@@ -8,7 +8,7 @@ import (
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	// Write "Hello" to the response
-	_, err := fmt.Fprintf(w, "Hello")
+	_, err := fmt.Fprintf(w, "Hello %s", os.Getenv("USERNAME"))
 	if err != nil {
 		return
 	}
